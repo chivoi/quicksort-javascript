@@ -3,15 +3,12 @@ export const quickSort = (array) => {
     let result;
     // base case
     if (array.length <= 1) {
-        console.log(array);
         return array;
     }
 
     // recursive case
     let pivotValue = array[Math.floor(array.length / 2)];
-    console.log("Pivot = " + pivotValue);
     result = partition(array, pivotValue);
-    console.log(result);
     return [quickSort(result[0]), pivotValue, quickSort(result[2])].flat();
 }
 
