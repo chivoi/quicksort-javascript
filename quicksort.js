@@ -1,5 +1,4 @@
 export const quickSort = (array) => {
-    console.log(`RUN FOR ${array}`)
     let result;
     // base case
     if (array.length <= 1) {
