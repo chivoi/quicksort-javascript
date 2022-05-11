@@ -17,11 +17,11 @@ console.log(quickSort([34, 1, 90, 4, 2, 50]));
 // helpers
 
 export function swap(first, second) {
-    if (first <= second) return [first, second];
-
-    let temp = first;
-    first = second;
-    second = temp;
+    if (first >= second) {
+        let temp = first;
+        first = second;
+        second = temp;
+    }
     return [first, second];
 }
 
@@ -29,11 +29,8 @@ export function partition(array, pivot) {
     let lessThanPivot = [];
     let greaterThanPivot = [];
     array.forEach(i => {
-        if (i < pivot) {
-            lessThanPivot.push(i);
-        } else if (i > pivot) {
-            greaterThanPivot.push(i);
-        }
+        if (i < pivot) lessThanPivot.push(i);
+        if (i > pivot) greaterThanPivot.push(i);
     });
     return [lessThanPivot, pivot, greaterThanPivot];
 }
