@@ -1,5 +1,4 @@
 export const quickSort = (array) => {
-    let result;
     // base case
     if (array.length <= 1) {
         return array;
@@ -7,7 +6,7 @@ export const quickSort = (array) => {
 
     // recursive case
     let pivotValue = array[Math.floor(array.length / 2)];
-    result = partition(array, pivotValue);
+    let result = partition(array, pivotValue);
     return [quickSort(result[0]), pivotValue, quickSort(result[2])].flat();
 }
 
